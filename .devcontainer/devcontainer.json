@@ -1,6 +1,9 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "features": {
-    "ghcr.io/devcontainers/features/flutter:1": {}
-  }
+  "name": "Flutter",
+  // Use a pre-built image that already has Flutter installed.
+  "image": "mcr.microsoft.com/devcontainers/flutter:0-bullseye",
+
+  // Forward the ports used by Flutter
+  "forwardPorts": [9100],
+  "postCreateCommand": "flutter config --no-analytics && flutter doctor"
 }
